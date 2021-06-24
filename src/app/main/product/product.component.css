@@ -1,0 +1,19 @@
+.card {
+  width: 200px;
+}
+
+.card-price {
+  color: #e20049;
+  font-weight: bold;
+}
+
+.details,
+.add-cart {
+  background-color: #456173;
+  color: white;
+  position: center;
+  height: 30px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-around;
+}

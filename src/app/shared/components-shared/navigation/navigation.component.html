@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <p class="navbar-content">AgroFun</p>
+  <button class="navbar-toggler" (click)="isShown = !isShown" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [ngClass]="{ show: isShown }">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-cart" href="/cart"
+        ><img src="assets/images/cart.svg" alt=""
+      /></a>
+      <a class="btn nav-login" href="/login">Login</a>
+      <a class="btn nav-register" href="/register">Register</a>
+    </div>
+  </div>
+</nav>
+<br />
+<br />
