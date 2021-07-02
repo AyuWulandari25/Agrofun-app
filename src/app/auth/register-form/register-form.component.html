@@ -1,10 +1,11 @@
-<form>
+<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
   <div class="form-group">
     <label for="name">Username</label>
     <input
       type="name"
       class="form-control form-name"
       placeholder="Enter your username"
+      formControlName="username"
     />
   </div>
   <div class="form-group">
@@ -13,6 +14,7 @@
       type="email"
       class="form-control form-email"
       placeholder="Enter email"
+      formControlName="email"
     />
   </div>
   <div class="form-group">
@@ -21,6 +23,7 @@
       type="password"
       class="form-control form-password"
       placeholder="Password"
+      formControlName="password"
     />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

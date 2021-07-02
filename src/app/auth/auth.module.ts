@@ -6,18 +6,22 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { RegisterComponent } from './register/register.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     LoginFormComponent,
     LoginComponent,
     RegisterFormComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
-  ]
+    AuthRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
 })
-export class AuthModule { }
+export class AuthModule {}
