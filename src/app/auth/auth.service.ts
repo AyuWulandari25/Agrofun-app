@@ -52,8 +52,8 @@ export class AuthService {
           );
           this.saveAuthData(this.token, expirationDate, this.UserId);
         }
-        Swal.fire('Success', 'Login success..', 'success');
         this.router.navigate(['/']);
+        Swal.fire('Success', 'Login success..', 'success');
       },
       (error) => {
         if (error.error.msg === 'Your email is wrong') {

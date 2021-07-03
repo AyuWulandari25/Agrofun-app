@@ -47,6 +47,7 @@
     font-size: 2rem;
   }
 }
+
 @media (min-width: 576px) {
   .header-2-2 .hero {
     padding: 3rem 2rem 5rem;

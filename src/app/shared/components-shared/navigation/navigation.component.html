@@ -5,11 +5,33 @@
   </button>
   <div class="collapse navbar-collapse" [ngClass]="{ show: isShown }">
     <div class="navbar-nav ml-auto">
+      <a class="btn nav-login" href="/login">Login</a>
+      <a class="btn nav-register" href="/register">Register</a>
       <a class="nav-cart" href="/cart"
         ><img src="assets/images/cart.svg" alt=""
       /></a>
-      <a class="btn nav-login" href="/login">Login</a>
-      <a class="btn nav-register" href="/register">Register</a>
+      <a class="nav-bag" href=""
+        ><img src="assets/images/shoppingbag.svg" alt=""
+      /></a>
+      <div class="dropdown show">
+        <a
+          class="btn nav-user p-0 shadow-none"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <img src="assets/images/user.svg" alt="" />
+          <small class="ml-1">Ayu Wulandari</small>
+        </a>
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">Log Out</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
