@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
       const m = await import('./cart/cart.module');
       return m.CartModule;
     },
+    canActivate: [AuthGuard],
   },
   {
     path: '',

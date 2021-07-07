@@ -5,15 +5,17 @@
   </button>
   <div class="collapse navbar-collapse" [ngClass]="{ show: isShown }">
     <div class="navbar-nav ml-auto">
-      <a class="btn nav-login" href="/login">Login</a>
-      <a class="btn nav-register" href="/register">Register</a>
+      <a class="btn nav-login" href="/login" *ngIf="isLogin">Login</a>
+      <a class="btn nav-register" href="/register" *ngIf="isRegister"
+        >Register</a
+      >
       <a class="nav-cart" href="/cart"
         ><img src="assets/images/cart.svg" alt=""
       /></a>
       <a class="nav-bag" href=""
         ><img src="assets/images/shoppingbag.svg" alt=""
       /></a>
-      <div class="dropdown show">
+      <div class="dropdown show" *ngIf="isUser">
         <a
           class="btn nav-user p-0 shadow-none"
           href="#"
@@ -24,12 +26,12 @@
           aria-expanded="false"
         >
           <img src="assets/images/user.svg" alt="" />
-          <small class="ml-1">Ayu Wulandari</small>
+          <small class="ml-1">{{ userName }}</small>
         </a>
 
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Profile</a>
-          <a class="dropdown-item" href="#">Log Out</a>
+          <a class="dropdown-item" href="#" (click)="onLogout()">Log Out</a>
         </div>
       </div>
     </div>
