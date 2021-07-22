@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
-import { UserService } from '../../service/user.service';
+import { UserService } from 'src/app/auth/user.service';
 
 @Component({
   selector: 'app-navigation',
@@ -20,11 +20,7 @@ export class NavigationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const userLogin: any = localStorage.getItem('userId');
-    this.userService.getOneUser(userLogin).subscribe((response: any) => {
-      this.userName = response.data.username;
-    });
-
+    this.userFund();
     const tokenLogin: any = localStorage.getItem('token');
     if (!tokenLogin) {
       this.isLogin = true;
@@ -39,5 +35,12 @@ export class NavigationComponent implements OnInit {
 
   onLogout(): void {
     this.authService.logout();
+  }
+
+  userFund(): void {
+    const userLogin: any = localStorage.getItem('userId');
+    this.userService.getOneUser(userLogin).subscribe((response: any) => {
+      this.userName = response.data.username;
+    });
   }
 }

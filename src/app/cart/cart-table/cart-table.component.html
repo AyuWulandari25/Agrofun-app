@@ -9,23 +9,24 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let data of cart">
         <th scope="row">
-          <img
-            src="https://images.tokopedia.net/img/cache/900/product-1/2020/6/8/batch-upload/batch-upload_52074351-8c3d-4bba-a084-47d30f37d54f.jpg"
-            alt=""
-            class="image-cart img-fluid"
-          />
-          <span class="text-danger">Rp 120000;</span>
+          <img [src]="data.items[1]" alt="" class="image-cart img-fluid" />
+          <span class="text-danger">Rp {{ data.items[0] }};</span>
           <br />
-          <span class="ml-2">Benih Cabe Rawit Pelita F1 2250 Biji</span>
+          <span class="ml-2">{{ data.items[2] }}</span>
         </th>
         <td>
-          <input type="number" class="form-control quantity" />
+          <!-- <input type="number" class="form-control quantity" /> -->
+          {{ data.quantity }}
         </td>
-        <td><span>Rp 120000;</span></td>
         <td>
-          <a href=""><img src="assets/images/deleted.svg" alt="" /></a>
+          <span>Rp {{ data.subtotal_payment }};</span>
+        </td>
+        <td>
+          <a href="" (click)="onDelete(data._id)"
+            ><img src="assets/images/deleted.svg" alt=""
+          /></a>
         </td>
       </tr>
       <tr>

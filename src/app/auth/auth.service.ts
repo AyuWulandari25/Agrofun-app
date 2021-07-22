@@ -18,21 +18,6 @@ export class AuthService {
   private authStatusListener = new Subject<boolean>();
 
   constructor(private http: HttpClient, private router: Router) {}
-  getToken(): any {
-    return this.token;
-  }
-
-  getIsAuth(): any {
-    return this.isAuthenticated;
-  }
-
-  getUserId(): any {
-    return this.UserId;
-  }
-
-  getAuthStatusListener(): any {
-    return this.authStatusListener.asObservable();
-  }
 
   public isAuth(): boolean {
     if (!localStorage.getItem('token')) {
@@ -106,6 +91,22 @@ export class AuthService {
     );
   }
 
+  getToken(): any {
+    return this.token;
+  }
+
+  getIsAuth(): any {
+    return this.isAuthenticated;
+  }
+
+  getUserId(): any {
+    return this.UserId;
+  }
+
+  getAuthStatusListener(): any {
+    return this.authStatusListener.asObservable();
+  }
+
   autoAuthUser(): any {
     const authInformation = this.getAuthData();
     if (!authInformation) {
@@ -128,7 +129,7 @@ export class AuthService {
     this.authStatusListener.next(false);
     this.UserId = null;
     this.clearAuthData();
-    this.router.navigate(['/']);
+    setTimeout(() => window.location.reload(), 1000);
   }
 
   private clearAuthData(): any {
@@ -138,7 +139,6 @@ export class AuthService {
   }
 
   private setAuthTimer(duration: number): any {
-    console.log('setting timer: ' + duration);
     this.tokenTimer = setTimeout(() => {
       this.logout();
     }, duration * 1000);
